@@ -1,6 +1,6 @@
 /* test-lookup.c --- Self tests for IDNA processing
-   Copyright (C) 2011-2022 Simon Josefsson
-   Copyright (C) 2017-2022 Tim Ruehsen
+   Copyright (C) 2011-2023 Simon Josefsson
+   Copyright (C) 2017-2023 Tim Ruehsen
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -1144,11 +1144,22 @@ test_homebrewed (void)
       idn2_free (out);
       ok++;
     }
+
+  if ((rc = idn2_to_ascii_4i2 (NULL, 4, (char **) &out, 0)) != IDN2_OK)
+    {
+      failed++;
+      printf ("special #10 failed with %d\n", rc);
+    }
+  else
+    {
+      idn2_free (out);
+      ok++;
+    }
 }
 
 // decode embedded UTF-16/32 sequences
 static uint8_t *
-_decodeIdnaTest (const uint8_t * src_u8)
+_decodeIdnaTest (const uint8_t *src_u8)
 {
   size_t it2 = 0, len;
   uint32_t *src;

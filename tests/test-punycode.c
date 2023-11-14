@@ -1,5 +1,5 @@
 /* test-punycode.c --- Self tests for Libidn2 punycode.
-   Copyright (C) 2002-2022 Simon Josefsson
+   Copyright (C) 2002-2023 Simon Josefsson
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -184,7 +184,7 @@ _GL_ATTRIBUTE_FORMAT_PRINTF_STANDARD (1, 2)
 }
 
 static void
-ucs4print (const uint32_t * str, size_t len)
+ucs4print (const uint32_t *str, size_t len)
 {
   size_t i;
 

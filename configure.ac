@@ -1,4 +1,4 @@
-# Copyright (C) 2011-2022 Simon Josefsson
+# Copyright (C) 2011-2023 Simon Josefsson
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -89,7 +89,7 @@ AM_CONDITIONAL([GTK_DOC_USE_LIBTOOL], false)
 ])
 
 AM_GNU_GETTEXT([external])
-AM_GNU_GETTEXT_VERSION([0.19.3])
+AM_GNU_GETTEXT_VERSION([0.19.8])
 
 AX_CODE_COVERAGE
 

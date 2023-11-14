@@ -1,5 +1,5 @@
 /* register.c - implementation of IDNA2008 register functions
-   Copyright (C) 2011-2022 Simon Josefsson
+   Copyright (C) 2011-2023 Simon Josefsson
 
    Libidn2 is free software: you can redistribute it and/or modify it
    under the terms of either:
@@ -71,8 +71,8 @@
  *   is returned, or another error code is returned.
  **/
 int
-idn2_register_u8 (const uint8_t * ulabel, const uint8_t * alabel,
-		  uint8_t ** insertname, int flags)
+idn2_register_u8 (const uint8_t *ulabel, const uint8_t *alabel,
+		  uint8_t **insertname, int flags)
 {
   int rc;
 
