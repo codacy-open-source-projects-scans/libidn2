@@ -167,9 +167,7 @@ static size_t
 _u32_to_stream (uint8_t *dst, size_t dst_size, uint32_t *src, size_t len)
 {
   unsigned it;
-  size_t n = 0;
-
-  n = _u32_stream_len (src, len);
+  size_t n = _u32_stream_len (src, len);
 
   if (!dst)
     return n;
@@ -290,7 +288,7 @@ read_IdnaMappings (char *linep)
       uint32_t cp, tmp[20] = { 0 }, tmp2[20] = { 0 };
       int pos;
 
-      while ((n = sscanf (mapping, " %X%n", &cp, &pos)) == 1)
+      while (sscanf (mapping, " %X%n", &cp, &pos) == 1)
 	{
 	  if (mapdata_pos >= countof (genmapdata))
 	    {
