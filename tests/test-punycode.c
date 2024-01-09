@@ -1,5 +1,5 @@
 /* test-punycode.c --- Self tests for Libidn2 punycode.
-   Copyright (C) 2002-2023 Simon Josefsson
+   Copyright (C) 2002-2024 Simon Josefsson
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -209,15 +209,6 @@ main (void)
   uint32_t *q;
   int rc;
   size_t i, outlen;
-
-  if (!idn2_check_version (IDN2_VERSION))
-    fail ("idn2_check_version(%s) failed\n", IDN2_VERSION);
-
-  if (!idn2_check_version (NULL))
-    fail ("idn2_check_version(NULL) failed\n");
-
-  if (idn2_check_version ("100.100"))
-    fail ("idn2_check_version(\"100.100\") failed\n");
 
   p = (char *) malloc (sizeof (*p) * BUFSIZ);
   if (p == NULL)

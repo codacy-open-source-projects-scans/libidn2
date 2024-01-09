@@ -1,4 +1,4 @@
-# Copyright (C) 2011-2023 Simon Josefsson
+# Copyright (C) 2011-2024 Simon Josefsson
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
 
 manual_title = Internationalized Domain Names Library
 
-old_NEWS_hash = 802fbde30158e257a5762f2ea07a4d83
+old_NEWS_hash = be4b8e37f34e4150007be9594029551d
 
 bootstrap-tools = gnulib,autoconf,automake,libtoolize,make,makeinfo,help2man,gperf,gengetopt,gtkdocize,tar,gzip
 
@@ -24,9 +24,7 @@ upload_dest_dir_ = libidn
 GNUPLOADFLAGS = --symlink-regex
 
 local-checks-to-skip += sc_unmarked_diagnostics sc_bindtextdomain # Re-add when we have translation
-local-checks-to-skip += sc_immutable_NEWS
 local-checks-to-skip += sc_prohibit_strcmp
-local-checks-to-skip += sc_copyright_check
 local-checks-to-skip += sc_prohibit_gnu_make_extensions
 
 # Ignore gnulib files.
@@ -45,7 +43,7 @@ exclude_file_name_regexp--sc_prohibit_atoi_atof = ^lib/gentr46map\.c$$
 exclude_file_name_regexp--sc_makefile_at_at_check = ^Makefile.am|src/Makefile\.am|tests/Makefile.am$$
 exclude_file_name_regexp--sc_prohibit_empty_lines_at_EOF = ^lib/IdnaMappingTable.txt|doc/reference/version.xml.in$$
 exclude_file_name_regexp--sc_prohibit_undesirable_word_seq = ^lib/idna-tables-properties.csv$$
-exclude_file_name_regexp--sc_prohibit_have_config_h = ^tests/test-lookup.c|tests/test-register.c|tests/test-tounicode.c|tests/test-strerror.c|tests/test-locale.c$$
+exclude_file_name_regexp--sc_prohibit_have_config_h = ^tests/test-version.c|tests/test-lookup.c|tests/test-register.c|tests/test-tounicode.c|tests/test-strerror.c|tests/test-locale.c$$
 exclude_file_name_regexp--sc_makefile_DISTCHECK_CONFIGURE_FLAGS = ^Makefile.am$$
 
 my-update-copyright:

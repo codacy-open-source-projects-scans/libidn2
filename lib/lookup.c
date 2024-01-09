@@ -1,6 +1,6 @@
 /* lookup.c - implementation of IDNA2008 lookup functions
-   Copyright (C) 2011-2023 Simon Josefsson
-   Copyright (C) 2017-2023 Tim Ruehsen
+   Copyright (C) 2011-2024 Simon Josefsson
+   Copyright (C) 2017-2024 Tim Ruehsen
 
    Libidn2 is free software: you can redistribute it and/or modify it
    under the terms of either:
@@ -741,7 +741,7 @@ idn2_to_ascii_4i (const uint32_t *input, size_t inlen, char *output,
       size_t len = strlen (out);
 
       if (len > 63)
-	rc = IDN2_TOO_BIG_DOMAIN;
+	rc = IDN2_TOO_BIG_LABEL;
       else if (output)
 	memcpy (output, out, len);
 
