@@ -31,7 +31,7 @@ libidn2_la_SOURCES += register.c
 libidn2_la_SOURCES += bidi.h bidi.c
 libidn2_la_SOURCES += version.c
 libidn2_la_SOURCES += error.c
-libidn2_la_SOURCES += punycode.h puny_encode.c puny_decode.c
+libidn2_la_SOURCES += punycode.c
 libidn2_la_SOURCES += free.c
 libidn2_la_SOURCES += data.h data.c
 libidn2_la_SOURCES += tr46map.h tr46map.c
@@ -102,7 +102,7 @@ $(NFCQC):
 if HAVE_LD_VERSION_SCRIPT
 libidn2_la_LDFLAGS += -Wl,--version-script=$(srcdir)/idn2.map
 else
-libidn2_la_LDFLAGS += -export-symbols-regex '^idn2_.*'
+libidn2_la_LDFLAGS += -export-symbols-regex '^(idn2_.*|_idn2_punycode_..code)$'
 endif
 
 if HAVE_LD_OUTPUT_DEF
