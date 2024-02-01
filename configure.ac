@@ -22,9 +22,9 @@ AC_INIT([Libidn2],
 # Interfaces changed/added/removed:   CURRENT++       REVISION=0
 # Interfaces added:                             AGE++
 # Interfaces removed:                           AGE=0
-AC_SUBST(LT_CURRENT, 3)
-AC_SUBST(LT_REVISION, 8)
-AC_SUBST(LT_AGE, 3)
+AC_SUBST(LT_CURRENT, 4)
+AC_SUBST(LT_REVISION, 0)
+AC_SUBST(LT_AGE, 4)
 
 DLL_VERSION=`expr ${LT_CURRENT} - ${LT_AGE}`
 AC_SUBST(DLL_VERSION)
@@ -217,7 +217,7 @@ WERROR_TESTS_CFLAGS:  $WERROR_TESTS_CFLAGS
 
   Documentation:      ${enable_doc}
 
-  nl_langinfo:        $gl_cv_header_langinfo_codeset
+  nl_langinfo:        $am_cv_langinfo_codeset
   Libiconv:           $am_cv_func_iconv_summary
          LTLIBICONV:  $LTLIBICONV
   Libunistring:       $ac_cv_libunistring

@@ -26,8 +26,11 @@ LDADD = ../lib/libidn2.la
 LDADD += ../unistring/libunistring.la $(LTLIBUNISTRING)
 LDADD += ../gl/libgnu.la
 
+EXTRA_DIST = standalone.sh
+
 ctests = test-version test-strerror test-locale test-tounicode
-ctests += test-punycode test-compat-punycode test-lookup test-register
+ctests += test-punycode test-compat-punycode
+ctests += test-IdnaTest-inc test-IdnaTest-txt test-lookup test-register
 if TEST_GLIBC
 ctests += test-glibc
 endif
@@ -47,7 +50,7 @@ IDNA_INC = IdnaTest.inc
 
 BUILT_SOURCES = $(IDNA_TXT) $(IDNA_INC)
 MAINTAINERCLEANFILES = $(BUILT_SOURCES)
-EXTRA_DIST = gen-utc-test.pl $(IDNA_TXT) $(IDNA_INC)
+EXTRA_DIST += gen-utc-test.pl $(IDNA_TXT) $(IDNA_INC)
 
 $(IDNA_TXT):
 	rm -f $(IDNA_TXT)
