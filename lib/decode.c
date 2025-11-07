@@ -1,5 +1,5 @@
 /* decode.c - implementation of IDNA2008 decoding functions
-   Copyright (C) 2011-2024 Simon Josefsson
+   Copyright (C) 2011-2025 Simon Josefsson
 
    Libidn2 is free software: you can redistribute it and/or modify it
    under the terms of either:
@@ -59,9 +59,9 @@
  * Since: 2.0.0
  **/
 int
-idn2_to_unicode_8z4z (const char *input, uint32_t **output,
-		      G_GNUC_UNUSED int flags)
+idn2_to_unicode_8z4z (const char *input, uint32_t **output, int flags)
 {
+  (void) flags;
   uint32_t *domain_u32;
   int rc;
 

@@ -1,4 +1,4 @@
-# Copyright (C) 2011-2024 Simon Josefsson
+# Copyright (C) 2011-2025 Simon Josefsson
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -37,10 +37,10 @@ AC_SUBST([NUMBER_VERSION], [`printf '0x%02x%02x%04x' $MAJOR_VERSION $MINOR_VERSI
 AC_MSG_NOTICE([$PACKAGE_NAME $PACKAGE_VERSION $PACKAGE_TARNAME $MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION $NUMBER_VERSION $LT_CURRENT:$LT_REVISION:$LT_AGE $DLL_VERSION])
 
 AC_CONFIG_AUX_DIR([build-aux])
-AC_CONFIG_MACRO_DIR([m4])
+AC_CONFIG_MACRO_DIRS([m4 gl/m4 unistring/m4])
 AC_CONFIG_HEADERS([config.h])
 
-AM_INIT_AUTOMAKE([1.14 -Wall -Wno-portability subdir-objects])
+AM_INIT_AUTOMAKE([1.14 tar-ustar -Wall -Wno-portability subdir-objects])
 AM_SILENT_RULES([yes])
 
 AC_PROG_CC
@@ -193,6 +193,7 @@ AC_CONFIG_FILES([
   tests/Makefile
   fuzz/Makefile
 ])
+gl_CONFIG_VERSION_STAMP
 AC_OUTPUT
 
 AC_MSG_NOTICE([summary of main build options:

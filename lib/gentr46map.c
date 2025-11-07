@@ -1,5 +1,5 @@
 /* gentr46map.c - generate TR46 lookup tables
-   Copyright (C) 2016-2024 Tim Ruehsen
+   Copyright (C) 2016-2025 Tim Ruehsen
 
    Libidn2 is free software: you can redistribute it and/or modify it
    under the terms of either:
@@ -480,7 +480,7 @@ _compact_idna_map (void)
   qsort (idna_map, map_pos, sizeof (IDNAMap_gen),
 	 (int (*)(const void *, const void *)) _compare_map_by_maplen);
 
-  uint8_t *data = calloc (sizeof (uint8_t), mapdata_pos), *p;
+  uint8_t *data = calloc (mapdata_pos, sizeof (uint8_t)), *p;
   size_t ndata = 0, slen;
 
   if (data == NULL)

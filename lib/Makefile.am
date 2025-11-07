@@ -1,4 +1,4 @@
-# Copyright (C) 2011-2024 Simon Josefsson
+# Copyright (C) 2011-2025 Simon Josefsson
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -46,17 +46,17 @@ libidn2_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
 	-no-undefined
 libidn2_la_LDFLAGS += $(CODE_COVERAGE_LDFLAGS)
 
-IDNA_TABLE = $(srcdir)/Idna2008-15.0.0.txt
-IANA_URL = https://www.unicode.org/Public/idna/idna2008derived/Idna2008-15.0.0.txt
-IDNA_TABLE_SHA1 = 6aad2582843823a6a91d188c5296c90dc8733df0
+IDNA_TABLE = $(srcdir)/Idna2008.txt
+IANA_URL = https://www.unicode.org/Public/idna/idna2008derived/Idna2008-15.1.0.txt
+IDNA_TABLE_SHA1 = db0df4e003fa022d40c0b4479e44214d5e83bfdc
 
 TR46MAP = $(srcdir)/IdnaMappingTable.txt
-TR46MAP_URL = https://www.unicode.org/Public/idna/15.0.0/IdnaMappingTable.txt
-TR46MAP_SHA1 = dc4c1f42fc53b3f618b153dd03a8a1a728ccd13f
+TR46MAP_URL = https://www.unicode.org/Public/idna/15.1.0/IdnaMappingTable.txt
+TR46MAP_SHA1 = b89107f6a693ab5396c586159a4cefc392316541
 
 NFCQC = $(srcdir)/DerivedNormalizationProps.txt
-NFCQC_URL = https://www.unicode.org/Public/15.0.0/ucd/DerivedNormalizationProps.txt
-NFCQC_SHA1 = 7f48197587f7b5675d671a3dc52b866eb1d76eff
+NFCQC_URL = https://www.unicode.org/Public/15.1.0/ucd/DerivedNormalizationProps.txt
+NFCQC_SHA1 = c328673c190fee88357c9e255587974c10c40ae1
 
 BUILT_SOURCES = data.c tr46map_data.c
 DISTCLEANFILES = $(BUILT_SOURCES)
@@ -65,14 +65,14 @@ MAINTAINERCLEANFILES = $(IDNA_TABLE) $(TR46MAP) $(NFCQC)
 EXTRA_DIST = $(IDNA_TABLE) $(TR46MAP) $(NFCQC) data.c gendata.c tr46map_data.c gentr46map.c
 
 gendata$(EXEEXT): gendata.c
-	$(CC) $(DEFAULT_INCLUDES) $(AM_CPPFLAGS) $(CFLAGS) $< -o $@
+	$(CC) $(DEFAULT_INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) $< -o $@
 data.c: $(srcdir)/gendata.c $(IDNA_TABLE)
 	$(MAKE) gendata$(EXEEXT)
 	$(builddir)/gendata$(EXEEXT) < $(IDNA_TABLE) > $@.new
 	mv $@.new $@
 
 gentr46map$(EXEEXT): gentr46map.c
-	$(CC) $(DEFAULT_INCLUDES) $(AM_CPPFLAGS) $(CFLAGS) $< -o $@
+	$(CC) $(DEFAULT_INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) $< -o $@
 tr46map_data.c: $(srcdir)/gentr46map.c $(TR46MAP) $(NFCQC)
 	$(MAKE) gentr46map$(EXEEXT)
 	$(builddir)/gentr46map$(EXEEXT) > $@.new

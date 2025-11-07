@@ -1,6 +1,6 @@
 /* test-lookup.c --- Self tests for IDNA processing
-   Copyright (C) 2011-2024 Simon Josefsson
-   Copyright (C) 2017-2024 Tim Ruehsen
+   Copyright (C) 2011-2025 Simon Josefsson
+   Copyright (C) 2017-2025 Tim Ruehsen
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -47,7 +47,7 @@ static const struct idna idna[] = {
   {"..", "..", IDN2_OK},	/* XXX should we disallow this? */
 
   /* U+19DA */
-  {"\xe1\xa7\x9a", "xn--pkf", IDN2_OK},
+  {"\xe1\xa7\x9a", "xn--pkf", IDN2_DISALLOWED},
 
   /* U+1E4D5 introduced with Unicode 15.0.0 */
   {"\xf0\x9e\x93\x95", "xn--th5h", IDN2_OK},

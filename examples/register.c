@@ -1,5 +1,5 @@
 /* register.c - example program to demonstrate IDNA2008 Register using Libidn2
-   Copyright (C) 2011-2024 Simon Josefsson
+   Copyright (C) 2011-2025 Simon Josefsson
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
 #include <idn2.h>		/* idn2_register_ul, IDN2_OK, idn2_strerror, idn2_strerror_name */
 
 int
-main (int argc, char *argv[])
+main ()
 {
   int rc;
   char src[BUFSIZ];

@@ -1,5 +1,5 @@
 /* idn2.h - header file for idn2
-   Copyright (C) 2011-2024 Simon Josefsson
+   Copyright (C) 2011-2025 Simon Josefsson
 
    Libidn2 is free software: you can redistribute it and/or modify it
    under the terms of either:
@@ -96,18 +96,6 @@ extern "C"
 # else
 #  define G_GNUC_IDN2_ATTRIBUTE_CONST
 # endif
-
-/**
- * G_GNUC_UNUSED
- *
- * Parameter attribute: Parameter is not used.
- */
-# if GCC_VERSION_AT_LEAST(2,95)
-#  define G_GNUC_UNUSED __attribute__ ((__unused__))
-# else
-#  define G_GNUC_UNUSED		/* empty */
-# endif
-
 
 /**
  * IDN2_VERSION
@@ -305,8 +293,7 @@ extern "C"
 					 int flags);
 
   extern _IDN2_API int idn2_to_unicode_8z4z (const char *input,
-					     uint32_t ** output,
-					     int flags G_GNUC_UNUSED);
+					     uint32_t ** output, int flags);
   extern _IDN2_API int idn2_to_unicode_4z4z (const uint32_t * input,
 					     uint32_t ** output, int flags);
   extern _IDN2_API int idn2_to_unicode_44i (const uint32_t * in, size_t inlen,

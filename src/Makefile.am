@@ -1,4 +1,4 @@
-# Copyright (C) 2011-2024 Simon Josefsson
+# Copyright (C) 2011-2025 Simon Josefsson
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,6 +23,8 @@ bin_PROGRAMS = idn2
 
 idn2_SOURCES = idn2.c
 idn2_LDADD = libidn2_cmd.la ../lib/libidn2.la ../gl/libgnu.la ../unistring/libunistring.la $(LTLIBUNISTRING) $(LIBS)
+
+EXTRA_idn2_DEPENDENCIES = $(top_srcdir)/.version
 
 idn2.c: $(BUILT_SOURCES)
 
